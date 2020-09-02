@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.scss"],"names":[],"mappings":"AAAA,KACE,kBAAmB,CACnB,wBAAiB,CAAjB,qBAAiB,CAAjB,oBAAiB,CAAjB,gBAAiB,CACjB,YAAa","file":"styles.css","sourcesContent":["body{\r\n  background: #a4e017;\r\n  user-select: none;\r\n  display: grid;\r\n}\r\n\r\n"]}
