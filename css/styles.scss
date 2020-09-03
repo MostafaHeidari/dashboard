@@ -1,6 +1,37 @@
-body{
-  background: #a4e017;
-  user-select: none;
-  display: grid;
-}
+$spacers:(
+        0:0,
+        1:0.25,
+        2:0.5,
+        3:1,
+        4:1.5,
+        5:3,
+);
 
+$spacers : (
+        0:0,
+        1:0.25,
+        2:0.5,
+        3:1,
+        4:1.5,
+        5:3,
+);
+$sides:(
+        '':'',
+        't':'-top',
+        'r':'-right',
+        'l':'-left',
+        'b':'-bottom'
+);
+@each $sideTag, $sideName in $sides {
+  @each $count, $value in $spacers {
+    .m#{$sideTag}-#{$count}{
+      margin#{$sideName}: #{$value}rem;
+    }
+    .p#{$sideTag}-#{$count}{
+      padding#{$sideName}: #{$value}rem;
+    }
+  }
+  .m#{$sideTag}-auto{
+    margin#{$sideName} : auto;
+  }
+}
