@@ -1,37 +1,121 @@
-$spacers:(
-        0:0,
-        1:0.25,
-        2:0.5,
-        3:1,
-        4:1.5,
-        5:3,
-);
+$desktopwidth: 1200px;
+$tabletW: 700;
 
-$spacers : (
-        0:0,
-        1:0.25,
-        2:0.5,
-        3:1,
-        4:1.5,
-        5:3,
-);
-$sides:(
-        '':'',
-        't':'-top',
-        'r':'-right',
-        'l':'-left',
-        'b':'-bottom'
-);
-@each $sideTag, $sideName in $sides {
-  @each $count, $value in $spacers {
-    .m#{$sideTag}-#{$count}{
-      margin#{$sideName}: #{$value}rem;
-    }
-    .p#{$sideTag}-#{$count}{
-      padding#{$sideName}: #{$value}rem;
+$skriftColor: black;
+
+$hvedskrift-size: 24px;
+
+$headercolor: #F3F0BE;
+$wcolor: white;
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: acumin-proMedium, sans-serif;
+}
+
+
+.FullPage {
+  margin: 0;
+  padding: 0;
+}
+
+#skrift1 {
+  background-color: #bda719;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  height: 50px;
+  align-items: center;
+
+  > h1 {
+    margin: 0;
+    color: #ffffff;
+  }
+}
+
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 10px;
+  align-items: center;
+}
+
+
+#section1 {
+  padding-left: 20px;
+
+  > a {
+    color: black;
+    text-decoration: dotted;
+    font-weight: bold;
+  }
+
+  > ul {
+    color: black;
+
+    > ul ,li{
+      color: black;
+      line-height: 50px;
     }
   }
-  .m#{$sideTag}-auto{
-    margin#{$sideName} : auto;
+}
+
+
+#p1{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+
+
+/*burgerMenu*/
+.sidepanel {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  top: 49px;
+  left: 0;
+  background-color: #bda719;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 100px;
+
+  > a {
+    padding: 8px 8px 40px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+
   }
+}
+
+
+.sidepanel a:hover {
+  color: $wcolor;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.openbtn {
+  font-size: 40px;
+  cursor: pointer;
+  color: #bda719;
+  border: none;
+  background: border-box;
+}
+
+.openbtn:hover {
+  background-color: #efdf90;
 }
