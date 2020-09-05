@@ -22,6 +22,60 @@
 
     <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse - bliver brugt til responsive websider -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawVisualization);
+
+        function  drawVisualization() {
+            // Some raw data (not necessarily accurate)
+            var data = google.visualization.arrayToDataTable([
+                ['Månedlige', 'MacBook', 'Gaming laptop', 'Lenovo', 'Acer', 'HP', 'Gennemsnit'],
+                ['2018 / 05',  165,      938,         522,             998,           450,      614.6],
+                ['2019 / 06',  135,      1120,        599,             1268,          288,      682],
+                ['2020 / 07',  157,      1167,        587,             807,           397,      623],
+
+            ]);
+
+            var options = {
+                title : 'bærebar',
+                vAxis: {title: 'antal'},
+                hAxis: {title: 'PC'},
+                seriesType: 'bars',
+                series: {5: {type: 'line'}}
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Language', 'Speakers (in millions)'],
+                ['Tyskland',  5.85],
+                ['Sverige',  1.66],
+                ['Norge', 0.316],
+             ]);
+
+            var options = {
+                legend: 'none',
+                pieSliceText: 'label',
+                title: '',
+                pieStartAngle: 100,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+
 </head>
 
 <!-- i <body> har man alt indhold på siden som brugeren kan se -->
@@ -34,21 +88,16 @@
         <div id="mySidepanel" class="sidepanel">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <a href="produkter.html">Produkter</a>
-            <a href="besøgende.html">Besøgende</a>
+            <a href="besøgende.html">oversigt</a>
             <a href="#">solgt</a>
         </div>
         <button class="openbtn" onclick="openNav()">☰</button>
 
     </div>
 
-<div id="p1">
-    <div><p>Hej, og velkomme til webshop</p></div>
-    <div><p>katti har mest effektive bærebar</p></div>
-</div>
-
-
-
-
+    <div id="p1">
+        <h3>Hej, og velkomme til Dashboard</h3>
+    </div>
 
 
     <div id="section1">
@@ -59,15 +108,32 @@
             <li>Lenovo</li>
             <li>Acer</li>
         </ul>
-        <a href="besøgende.html">Besøgende</a>
+        <a href="besøgende.html">Oversigt</a>
     </div>
 
-    <div class="container">
-
+    <div class="p2">
+        <p>Solgt bærebar</p>
     </div>
+
 </div>
 
 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<div id="chart_div"></div>
+<div class="p2">
+    <p>oversigt over solgte varer</p>
+</div>
+
+<div id="piechart" style="width: 350px; height: 350px;"></div>
+
+<footer>
+    <div class="F-text">
+        <p>Det er lørdag, 5. september 2020</p>
+    </div>
+</footer>
 
 <!-- bruger menu link-->
 <script>

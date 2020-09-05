@@ -41,6 +41,11 @@ body {
   flex-direction: row-reverse;
   padding: 10px;
   align-items: center;
+  background-color: beige;
+
+  img{
+    padding-right: 10px;
+  }
 }
 
 
@@ -68,6 +73,52 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
+  font-size: 24px;
+
+  h3{
+    font-size: 20px;
+  }
+
+}
+
+#chart_div{
+   height: 250px;
+  width: 370px;
+  display: flex;
+  justify-content: center;
+}
+
+#piechart{
+
+  display: flex;
+  justify-content: center;
+}
+
+
+.p2{
+  justify-content: center;
+  display: flex;
+  background-color: beige;
+  margin-top: 40px;
+
+  >p{
+    color: black;
+font-size: 20px;
+  }
+}
+
+footer{
+  height: 100px;
+  width: 100%;
+  background-color: #bda719;
+  display: flex;
+  justify-content: center;
+  P{
+    justify-content: center;
+    padding-top: 20px;
+    color: white;
+
+  }
 }
 
 
