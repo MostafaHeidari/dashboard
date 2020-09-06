@@ -22,11 +22,36 @@
 
     <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse - bliver brugt til responsive websider -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages: ["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Language', 'Speakers (in millions)'],
+                ['Tyskland', 5.85],
+                ['Sverige', 1.66],
+                ['Norge', 0.316],
+            ]);
+
+            var options = {
+                legend: 'none',
+                pieSliceText: 'label',
+                title: '',
+                pieStartAngle: 100,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
 </head>
 
 <!-- i <body> har man alt indhold på siden som brugeren kan se -->
 <body>
 
+<div id="piechart" style="width: 900px; height: 500px;"></div>
 
 </body>
 </html>
